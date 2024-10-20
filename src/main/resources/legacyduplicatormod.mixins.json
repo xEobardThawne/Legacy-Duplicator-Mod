@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "xreversef1ash.legacyduplicatormod.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
