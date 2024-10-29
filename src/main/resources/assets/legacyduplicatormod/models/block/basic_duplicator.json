@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "legacyduplicatormod:block/cobblestone_machine",
+    "end": "legacyduplicatormod:block/duplicator_machine_vertical"
+  }
+}

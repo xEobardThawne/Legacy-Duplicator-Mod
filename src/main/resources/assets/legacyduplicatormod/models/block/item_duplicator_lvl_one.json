@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "side": "legacyduplicatormod:block/item_duplicator_one_machine_side",
+    "top": "legacyduplicatormod:block/item_duplicator_machine_top",
+    "bottom": "legacyduplicatormod:block/cobblestone_machine"
+  }
+}

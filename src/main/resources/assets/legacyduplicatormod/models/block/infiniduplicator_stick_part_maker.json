@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "legacyduplicatormod:block/infiniduplicator_stick_part_maker_side",
+    "end": "legacyduplicatormod:block/infiniduplicator_stick_part_maker_vertical"
+  }
+}

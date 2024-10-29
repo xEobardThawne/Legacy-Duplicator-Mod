@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "legacyduplicatormod:basic_duplicator",
+    "legacyduplicatormod:item_duplicator_lvl_one",
+    "legacyduplicatormod:item_duplicator_lvl_two",
+    "legacyduplicatormod:item_duplicator_lvl_three",
+    "legacyduplicatormod:item_duplicator_lvl_four"
+  ]
+}

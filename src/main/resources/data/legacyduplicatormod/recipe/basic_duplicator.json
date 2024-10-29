@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "CNC",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:redstone_block"
+        },
+        "C": {
+            "item": "minecraft:cobblestone"
+        },
+        "N": {
+            "item": "minecraft:netherite_block"
+        }
+    },
+    "result": {
+        "id": "legacyduplicatormod:basic_duplicator",
+        "count": 1
+    }
+}
