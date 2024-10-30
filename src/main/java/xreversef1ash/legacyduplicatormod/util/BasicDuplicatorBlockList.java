@@ -35,6 +35,10 @@ public class BasicDuplicatorBlockList {
         return Blocklist;
     }
 
+    public static boolean isBlockInBlocklist(Block block) {
+        return Blocklist.contains(block);
+    }
+
     public static void setBlocklist(ArrayList<Block> list) {
         Blocklist.clear();
         Blocklist.addAll(list);

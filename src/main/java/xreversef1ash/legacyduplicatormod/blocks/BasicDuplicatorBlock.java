@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import xreversef1ash.legacyduplicatormod.util.BasicDuplicatorBlockList;
 
 public class BasicDuplicatorBlock extends Block {
     public BasicDuplicatorBlock(Settings settings) {
@@ -29,6 +30,15 @@ public class BasicDuplicatorBlock extends Block {
                         !blockAbove.isAir() &&
                         (heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of("legacyduplicatormod", "duplicator_fuel"))))
         ) {
+            if (BasicDuplicatorBlockList.isBasicDuplicatorOnWhitelist()) {
+                if (!BasicDuplicatorBlockList.isBlockInBlocklist(blockAbove.getBlock())) {
+                    return ActionResult.PASS;
+                }
+            } else {
+                if (BasicDuplicatorBlockList.isBlockInBlocklist(blockAbove.getBlock())) {
+                    return ActionResult.PASS;
+                }
+            }
             if (!heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of("legacyduplicatormod", "infinite_duplicator_fuel")))) {
                 player.getMainHandStack().decrement(1);
             }
