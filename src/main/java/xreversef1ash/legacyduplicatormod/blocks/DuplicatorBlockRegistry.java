@@ -28,7 +28,7 @@ public class DuplicatorBlockRegistry {
             "basic_duplicator"
     );
     public static final Block ITEM_DUPLICATOR_LVL_ONE = register(
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f)),
+            new ItemDuplicatorLevelOneBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f)),
             "item_duplicator_lvl_one"
     );
     public static final Block ITEM_DUPLICATOR_LVL_TWO = register(

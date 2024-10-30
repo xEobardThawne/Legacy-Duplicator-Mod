@@ -7,5 +7,6 @@
   "block.legacyduplicatormod.item_duplicator_lvl_four": "Item Duplicator Level 4",
   "block.legacyduplicatormod.infiniduplicator_stick_part_maker": "Infiniduplicator Stick Part Maker",
   "item.legacyduplicatormod.duplicator_stick": "Duplicator Stick",
-  "item.legacyduplicatormod.infiniduplicator_stick": "Infiniduplicator Stick"
+  "item.legacyduplicatormod.infiniduplicator_stick": "Infiniduplicator Stick",
+  "container.itemduplicatorlvlone": "Item Duplicator Level 1"
 }

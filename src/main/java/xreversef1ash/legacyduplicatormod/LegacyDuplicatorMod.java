@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xreversef1ash.legacyduplicatormod.blocks.DuplicatorBlockRegistry;
 import xreversef1ash.legacyduplicatormod.items.DuplicatorItemRegistry;
+import xreversef1ash.legacyduplicatormod.screens.ScreenDuplicatorRegistry;
 
 public class LegacyDuplicatorMod implements ModInitializer {
 	public static final String MOD_ID = "legacyduplicatormod";
@@ -23,6 +24,7 @@ public class LegacyDuplicatorMod implements ModInitializer {
 		DuplicatorBlockRegistry.init();
 		DuplicatorItemRegistry.init();
 		DuplicatorTab.createTab();
+		ScreenDuplicatorRegistry.init();
 
 
 		LOGGER.info("Loaded Legacy Duplicator Mod");
