@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#N#",
+        "N/N",
+        "#N#"
+    ],
+    "key": {
+        "#": {
+            "item": "legacyduplicatormod:item_duplicator_level_one"
+        },
+        "N": {
+            "item": "legacyduplicatormod:item_duplicator_level_two"
+        },
+        "/": {
+            "item": "legacyduplicatormod:duplicator_stick"
+        }
+    },
+    "result": {
+        "id": "legacyduplicatormod:item_duplicator_level_three",
+        "count": 1
+    }
+}

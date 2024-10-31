@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "legacyduplicatormod:unduplicatable_item_one"
+        }
+    },
+    "result": {
+        "id": "legacyduplicatormod:unduplicatable_item_two",
+        "count": 1
+    }
+}

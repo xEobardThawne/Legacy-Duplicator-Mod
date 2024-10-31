@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "C/C",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "legacyduplicatormod:basic_duplicator"
+        },
+        "C": {
+            "item": "minecraft:cobblestone"
+        },
+        "/": {
+            "item": "legacyduplicatormod:duplicator_stick"
+        }
+    },
+    "result": {
+        "id": "legacyduplicatormod:item_duplicator_level_one",
+        "count": 1
+    }
+}
