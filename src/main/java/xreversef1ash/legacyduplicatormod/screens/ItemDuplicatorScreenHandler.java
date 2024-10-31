@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import xreversef1ash.legacyduplicatormod.LegacyDuplicatorMod;
 import xreversef1ash.legacyduplicatormod.blocks.DuplicatorBlockRegistry;
 import xreversef1ash.legacyduplicatormod.util.ItemDuplicatorItemList;
+import xreversef1ash.legacyduplicatormod.util.ItemDuplicatorLevel;
 
 public class ItemDuplicatorScreenHandler extends ScreenHandler {
     private final ScreenHandlerContext context;
@@ -75,7 +76,7 @@ public class ItemDuplicatorScreenHandler extends ScreenHandler {
                                 this.inventory.setStack(1, ItemStack.EMPTY);
                             }
                         }
-                        ItemStack duplicatedStack = duplicatee.copyWithCount(Math.min(duplicatee.getCount(), 4));
+                        ItemStack duplicatedStack = duplicatee.copyWithCount(Math.min(duplicatee.getCount(), ItemDuplicatorLevel.getDuplicationSizeFromLevel(duplicatorLevel)));
                         this.inventory.setStack(2, duplicatedStack);
 
                         this.inventory.markDirty();
