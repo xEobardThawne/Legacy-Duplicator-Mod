@@ -24,4 +24,19 @@ public class DuplicatorItemRegistry {
             new Item(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),
             "infiniduplicator_stick"
     );
+
+    public static final Item INFINIDUPLICATOR_STICK_PART = register(
+            new Item(new Item.Settings().rarity(Rarity.EPIC).maxCount(16)),
+            "infiniduplicator_stick_part"
+    );
+
+    public static final Item UNDUPLICATABLE_ITEM_ONE = register(
+            new Item(new Item.Settings().rarity(Rarity.RARE)),
+            "unduplicatable_item_one"
+    );
+
+    public static final Item UNDUPLICATABLE_ITEM_TWO = register(
+            new Item(new Item.Settings().rarity(Rarity.RARE)),
+            "unduplicatable_item_two"
+    );
 }

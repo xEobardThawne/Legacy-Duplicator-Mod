@@ -33,7 +33,9 @@ public class DuplicatorTab {
             itemGroup.add(DuplicatorBlockRegistry.INFINIDUPLICATOR_STICK_PART_MAKER.asItem());
             itemGroup.add(DuplicatorItemRegistry.DUPLICATOR_STICK);
             itemGroup.add(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK);
-
+            itemGroup.add(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK_PART);
+            itemGroup.add(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_ONE);
+            itemGroup.add(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_TWO);
         });
     }
 }

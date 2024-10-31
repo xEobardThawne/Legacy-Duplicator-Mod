@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "legacyduplicatormod:item/infiniduplicator_stick_part"
+  }
+}
