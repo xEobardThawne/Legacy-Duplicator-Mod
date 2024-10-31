@@ -6,7 +6,7 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
-import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.screen.slot.Slot;
 import xreversef1ash.legacyduplicatormod.blocks.DuplicatorBlockRegistry;
 
 public class ItemDuplicatorScreenHandler extends ScreenHandler {
@@ -21,6 +21,22 @@ public class ItemDuplicatorScreenHandler extends ScreenHandler {
         super(ScreenDuplicatorRegistry.ITEM_DUPLICATION, syncId);
         this.context = context;
         this.player = playerInventory.player;
+
+        this.addSlot(new Slot(inventory, 0, 44, 29));
+
+        this.addSlot(new DuplicatorFuelSlot(inventory, 1, 80, 53));
+
+        this.addSlot(new DuplicatorResultSlot(inventory, 2, 116, 29));
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
+                this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+            }
+        }
+
+        for (int i = 0; i < 9; i++) {
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
+        }
     }
 
     @Override

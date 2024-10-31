@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import xreversef1ash.legacyduplicatormod.LegacyDuplicatorMod;
 import xreversef1ash.legacyduplicatormod.util.BasicDuplicatorBlockList;
 
 public class BasicDuplicatorBlock extends Block {
@@ -28,7 +29,7 @@ public class BasicDuplicatorBlock extends Block {
                 player.getAbilities().allowModifyWorld &&
                         blockBelow.isAir() &&
                         !blockAbove.isAir() &&
-                        (heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of("legacyduplicatormod", "duplicator_fuel"))))
+                        heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(LegacyDuplicatorMod.MOD_ID, "duplicator_fuel")))
         ) {
             if (BasicDuplicatorBlockList.isBasicDuplicatorOnWhitelist()) {
                 if (!BasicDuplicatorBlockList.isBlockInBlocklist(blockAbove.getBlock())) {
@@ -39,7 +40,7 @@ public class BasicDuplicatorBlock extends Block {
                     return ActionResult.PASS;
                 }
             }
-            if (!heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of("legacyduplicatormod", "infinite_duplicator_fuel")))) {
+            if (!heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(LegacyDuplicatorMod.MOD_ID, "infinite_duplicator_fuel")))) {
                 player.getMainHandStack().decrement(1);
             }
             world.setBlockState(pos.down(), blockAbove);

@@ -12,7 +12,7 @@ public class ScreenDuplicatorRegistry {
             Registry.register(
                     Registries.SCREEN_HANDLER,
                     Identifier.of(LegacyDuplicatorMod.MOD_ID, "item_duplication"),
-                    new ScreenHandlerType<>(ItemDuplicatorScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
+                    new ScreenHandlerType<>(ItemDuplicatorScreenHandler::new, FeatureFlags.VANILLA_FEATURES)); // TODO: Do FeatureFlags need to be changed?
 
     public static void init() {}
 }
