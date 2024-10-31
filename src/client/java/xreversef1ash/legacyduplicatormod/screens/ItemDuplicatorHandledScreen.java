@@ -33,6 +33,12 @@ public class ItemDuplicatorHandledScreen extends HandledScreen<ItemDuplicatorScr
         this.addDrawableChild(duplicateButton);
     }
 
+    @Override
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        super.render(context, mouseX, mouseY, delta);
+        this.drawMouseoverTooltip(context, mouseX, mouseY);
+    }
+
 
     @Override
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
