@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import xreversef1ash.legacyduplicatormod.LegacyDuplicatorMod;
 
@@ -28,7 +29,10 @@ public class DuplicatorBlockRegistry {
             "basic_duplicator"
     );
     public static final Block ITEM_DUPLICATOR_LVL_ONE = register(
-            new ItemDuplicatorLevelOneBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f)),
+            new ItemDuplicatorBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f),
+                    Text.translatable("container.itemduplicatorlvlone"),
+                    1
+            ),
             "item_duplicator_lvl_one"
     );
     public static final Block ITEM_DUPLICATOR_LVL_TWO = register(

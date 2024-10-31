@@ -14,9 +14,13 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import xreversef1ash.legacyduplicatormod.screens.ItemDuplicatorScreenHandler;
 
-public class ItemDuplicatorLevelOneBlock extends Block {
-    public ItemDuplicatorLevelOneBlock(Settings settings) {
+public class ItemDuplicatorBlock extends Block {
+    private final Text blockName;
+    private final int blockLevel;
+    public ItemDuplicatorBlock(Settings settings, Text name, int blockLevel) {
         super(settings);
+        this.blockName = name;
+        this.blockLevel = blockLevel;
     }
 
     @Override
@@ -33,7 +37,7 @@ public class ItemDuplicatorLevelOneBlock extends Block {
     @Override
     protected NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
         return new SimpleNamedScreenHandlerFactory(
-                ((syncId, playerInventory, player) -> new ItemDuplicatorScreenHandler(syncId, playerInventory, ScreenHandlerContext.create(world, pos))), Text.translatable("container.itemduplicatorlvlone")
+                ((syncId, playerInventory, player) -> new ItemDuplicatorScreenHandler(syncId, playerInventory, ScreenHandlerContext.create(world, pos), blockLevel)), blockName
         );
     }
 }

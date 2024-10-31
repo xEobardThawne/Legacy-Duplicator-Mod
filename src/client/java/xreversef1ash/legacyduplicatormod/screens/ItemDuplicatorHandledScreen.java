@@ -22,8 +22,9 @@ public class ItemDuplicatorHandledScreen extends HandledScreen<ItemDuplicatorScr
                         Text.translatable("container.button.duplicatetext"),
                         button -> {
                             if (this.client != null) {
-                                this.handler.onButtonClick(this.client.player, 0);
-                            } else {
+                                if (this.handler.onButtonClick(this.client.player, 1)) {
+                                    this.client.interactionManager.clickButton(this.handler.syncId, 1);
+                                }
                             }
                         }
                 )
@@ -38,6 +39,5 @@ public class ItemDuplicatorHandledScreen extends HandledScreen<ItemDuplicatorScr
         int x = (this.width - this.backgroundWidth) / 2;
         int y = (this.height - this.backgroundHeight) / 2;
         context.drawTexture(TEXTURE, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight);
-
     }
 }

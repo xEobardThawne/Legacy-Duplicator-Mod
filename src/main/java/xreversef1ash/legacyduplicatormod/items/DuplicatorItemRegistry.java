@@ -21,7 +21,7 @@ public class DuplicatorItemRegistry {
             "duplicator_stick"
     );
     public static final Item INFINIDUPLICATOR_STICK = register(
-            new Item(new Item.Settings().rarity(Rarity.EPIC)),
+            new Item(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)),
             "infiniduplicator_stick"
     );
 }

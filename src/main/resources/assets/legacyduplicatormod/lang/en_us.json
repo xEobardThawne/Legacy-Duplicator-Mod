@@ -1,13 +1,15 @@
 {
-  "itemGroup.duplicatorTab": "Legacy Duplicator Mod",
   "block.legacyduplicatormod.basic_duplicator": "Basic Duplicator",
   "block.legacyduplicatormod.item_duplicator_lvl_one": "Item Duplicator Level 1",
   "block.legacyduplicatormod.item_duplicator_lvl_two": "Item Duplicator Level 2",
   "block.legacyduplicatormod.item_duplicator_lvl_three": "Item Duplicator Level 3",
   "block.legacyduplicatormod.item_duplicator_lvl_four": "Item Duplicator Level 4",
   "block.legacyduplicatormod.infiniduplicator_stick_part_maker": "Infiniduplicator Stick Part Maker",
+  "container.button.duplicatetext": "Duplicate",
+  "container.itemduplicatorlvlone": "Item Duplicator Level 1",
   "item.legacyduplicatormod.duplicator_stick": "Duplicator Stick",
   "item.legacyduplicatormod.infiniduplicator_stick": "Infiniduplicator Stick",
-  "container.itemduplicatorlvlone": "Item Duplicator Level 1",
-  "container.button.duplicatetext": "Duplicate"
+  "itemGroup.duplicatorTab": "Legacy Duplicator Mod",
+  "tag.item.legacyduplicatormod.duplicator_fuel": "Duplicator Fuel",
+  "tag.item.legacyduplicatormod.infinite_duplicator_fuel": "Infinite Duplicator Fuel"
 }
