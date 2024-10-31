@@ -8,5 +8,6 @@
   "block.legacyduplicatormod.infiniduplicator_stick_part_maker": "Infiniduplicator Stick Part Maker",
   "item.legacyduplicatormod.duplicator_stick": "Duplicator Stick",
   "item.legacyduplicatormod.infiniduplicator_stick": "Infiniduplicator Stick",
-  "container.itemduplicatorlvlone": "Item Duplicator Level 1"
+  "container.itemduplicatorlvlone": "Item Duplicator Level 1",
+  "container.button.duplicatetext": "Duplicate"
 }

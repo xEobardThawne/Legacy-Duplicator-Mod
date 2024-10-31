@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
+import xreversef1ash.legacyduplicatormod.LegacyDuplicatorMod;
 import xreversef1ash.legacyduplicatormod.blocks.DuplicatorBlockRegistry;
 
 public class ItemDuplicatorScreenHandler extends ScreenHandler {
@@ -21,6 +22,7 @@ public class ItemDuplicatorScreenHandler extends ScreenHandler {
         super(ScreenDuplicatorRegistry.ITEM_DUPLICATION, syncId);
         this.context = context;
         this.player = playerInventory.player;
+
 
         this.addSlot(new Slot(inventory, 0, 44, 29));
 
@@ -40,8 +42,16 @@ public class ItemDuplicatorScreenHandler extends ScreenHandler {
     }
 
     @Override
+    public boolean onButtonClick(PlayerEntity player, int id) {
+        if (id == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public ItemStack quickMove(PlayerEntity player, int slot) {
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override

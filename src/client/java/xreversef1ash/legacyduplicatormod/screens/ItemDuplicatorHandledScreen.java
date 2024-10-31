@@ -2,6 +2,7 @@ package xreversef1ash.legacyduplicatormod.screens;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -14,11 +15,29 @@ public class ItemDuplicatorHandledScreen extends HandledScreen<ItemDuplicatorScr
         super(handler, inventory, title);
     }
 
+    @Override
+    protected void init() {
+        super.init();
+        ButtonWidget duplicateButton = ButtonWidget.builder(
+                        Text.translatable("container.button.duplicatetext"),
+                        button -> {
+                            if (this.client != null) {
+                                this.handler.onButtonClick(this.client.player, 0);
+                            } else {
+                            }
+                        }
+                )
+                .dimensions(x + 63, y + 28, 49, 18)
+                .build();
+        this.addDrawableChild(duplicateButton);
+    }
+
 
     @Override
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         int x = (this.width - this.backgroundWidth) / 2;
         int y = (this.height - this.backgroundHeight) / 2;
         context.drawTexture(TEXTURE, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight);
+
     }
 }
