@@ -36,15 +36,21 @@ public class DuplicatorBlockRegistry {
             "item_duplicator_lvl_one"
     );
     public static final Block ITEM_DUPLICATOR_LVL_TWO = register(
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f)),
+            new ItemDuplicatorBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f),
+                    Text.translatable("container.itemduplicatorlvltwo"),
+                    2),
             "item_duplicator_lvl_two"
     );
     public static final Block ITEM_DUPLICATOR_LVL_THREE = register(
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f)),
+            new ItemDuplicatorBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f),
+                    Text.translatable("container.itemduplicatorlvlthree"),
+                    3),
             "item_duplicator_lvl_three"
     );
     public static final Block ITEM_DUPLICATOR_LVL_FOUR = register(
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f)),
+            new ItemDuplicatorBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(5.0f).requiresTool().resistance(20.0f),
+                    Text.translatable("container.itemduplicatorlvlfour"),
+                    4),
             "item_duplicator_lvl_four"
     );
 
