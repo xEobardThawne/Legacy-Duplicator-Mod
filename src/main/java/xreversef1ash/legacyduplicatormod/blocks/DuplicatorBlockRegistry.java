@@ -55,7 +55,7 @@ public class DuplicatorBlockRegistry {
     );
 
     public static final Block INFINIDUPLICATOR_STICK_PART_MAKER = register(
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(8.0f).requiresTool().resistance(50.0f)),
+            new InfDupStickPartMakerBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).hardness(8.0f).requiresTool().resistance(50.0f)),
             "infiniduplicator_stick_part_maker"
     );
 

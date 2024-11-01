@@ -15,7 +15,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 import xreversef1ash.legacyduplicatormod.LegacyDuplicatorMod;
-import xreversef1ash.legacyduplicatormod.blocks.DuplicatorBlockRegistry;
 import xreversef1ash.legacyduplicatormod.util.ItemDuplicatorItemList;
 import xreversef1ash.legacyduplicatormod.util.ItemDuplicatorLevel;
 
