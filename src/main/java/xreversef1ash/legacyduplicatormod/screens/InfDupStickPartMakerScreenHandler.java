@@ -8,6 +8,8 @@ import net.minecraft.item.Items;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import xreversef1ash.legacyduplicatormod.blocks.DuplicatorBlockRegistry;
 import xreversef1ash.legacyduplicatormod.items.DuplicatorItemRegistry;
 
@@ -39,6 +41,59 @@ public class InfDupStickPartMakerScreenHandler extends ScreenHandler {
 
         for (int i = 0; i < 9; i++) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
+        }
+    }
+
+    @Override
+    public boolean onButtonClick(PlayerEntity player, int id) {
+        if (id == 1) {
+            ItemStack slot0 = this.inventory.getStack(0);
+            ItemStack slot1 = this.inventory.getStack(1);
+            ItemStack slot2 = this.inventory.getStack(2);
+            ItemStack slot3 = this.inventory.getStack(3);
+            if (!slot0.isEmpty() && !slot1.isEmpty() && !slot2.isEmpty()) {
+                if (slot3.isEmpty() || (slot3.isOf(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK_PART) && slot3.getCount() < slot3.getMaxCount())) {
+                    if (
+                            (slot0.isOf(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_ONE) && slot0.getCount() >= 10) &&
+                                    (slot1.isOf(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_TWO) && slot1.getCount() >= 4) &&
+                                    (slot2.isOf(Items.STICKY_PISTON) && slot2.getCount() >= 5)
+                    ) {
+                        this.context.run((world, blockPos) -> {
+                            slot0.decrement(10);
+                            if (slot0.isEmpty()) {
+                                this.inventory.setStack(0, ItemStack.EMPTY);
+                            }
+                            slot1.decrement(4);
+                            if (slot1.isEmpty()) {
+                                this.inventory.setStack(1, ItemStack.EMPTY);
+                            }
+                            slot2.decrement(5);
+                            if (slot2.isEmpty()) {
+                                this.inventory.setStack(2, ItemStack.EMPTY);
+                            }
+
+                            if (slot3.isEmpty()) {
+                                this.inventory.setStack(3, new ItemStack(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK_PART, 1));
+                            } else {
+                                slot3.increment(1);
+                            }
+
+                            this.inventory.markDirty();
+                            this.sendContentUpdates();
+                            world.playSound(null, blockPos, SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, SoundCategory.BLOCKS, 2.0F, 1.0F);
+                        });
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     }
 
