@@ -23,6 +23,8 @@ public class ItemDuplicatorItemList {
                     DuplicatorBlockRegistry.ITEM_DUPLICATOR_LVL_FOUR.asItem(),
                     DuplicatorItemRegistry.DUPLICATOR_STICK,
                     DuplicatorItemRegistry.INFINIDUPLICATOR_STICK,
+                    DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_ONE,
+                    DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_TWO,
                     Items.SHULKER_BOX,
                     Items.BLUE_SHULKER_BOX,
                     Items.BLACK_SHULKER_BOX,
