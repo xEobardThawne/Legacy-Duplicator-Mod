@@ -7,17 +7,17 @@
     ],
     "key": {
         "#": {
-            "item": "legacyduplicatormod:item_duplicator_level_one"
+            "item": "legacyduplicatormod:item_duplicator_lvl_one"
         },
         "N": {
-            "item": "legacyduplicatormod:item_duplicator_level_two"
+            "item": "legacyduplicatormod:item_duplicator_lvl_two"
         },
         "/": {
             "item": "legacyduplicatormod:duplicator_stick"
         }
     },
     "result": {
-        "id": "legacyduplicatormod:item_duplicator_level_three",
+        "id": "legacyduplicatormod:item_duplicator_lvl_three",
         "count": 1
     }
 }
