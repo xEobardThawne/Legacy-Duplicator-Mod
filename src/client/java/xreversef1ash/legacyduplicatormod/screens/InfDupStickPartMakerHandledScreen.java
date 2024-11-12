@@ -46,19 +46,19 @@ public class InfDupStickPartMakerHandledScreen extends HandledScreen<InfDupStick
         super.render(context, mouseX, mouseY, delta);
         List<Text> tooltiptext = null;
         if (this.getScreenHandler().getSlot(0).getStack().isEmpty()) {
-            List<Text> gettext = drawInfo(context, 0, x + 16, y + 42, new ItemStack(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_ONE, 10));
+            List<Text> gettext = drawInfo(context, 0, x + 16, y + 42, LegacyDuplicatorMod.infiniRecipeData.getSlotData(0));
             if (gettext != null) {
                 tooltiptext = gettext;
             }
         }
         if (this.getScreenHandler().getSlot(1).getStack().isEmpty()) {
-            List<Text> gettext = drawInfo(context, 1, x + 52, y + 42, new ItemStack(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_TWO, 4));
+            List<Text> gettext = drawInfo(context, 1, x + 52, y + 42, LegacyDuplicatorMod.infiniRecipeData.getSlotData(1));
             if (gettext != null) {
                 tooltiptext = gettext;
             }
         }
         if (this.getScreenHandler().getSlot(2).getStack().isEmpty()) {
-            List<Text> gettext = drawInfo(context, 2, x + 88, y + 42, new ItemStack(Items.STICKY_PISTON, 5));
+            List<Text> gettext = drawInfo(context, 2, x + 88, y + 42, LegacyDuplicatorMod.infiniRecipeData.getSlotData(2));
             if (gettext != null) {
                 tooltiptext = gettext;
             }

@@ -10,6 +10,7 @@ import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import xreversef1ash.legacyduplicatormod.LegacyDuplicatorMod;
 import xreversef1ash.legacyduplicatormod.blocks.DuplicatorBlockRegistry;
 import xreversef1ash.legacyduplicatormod.items.DuplicatorItemRegistry;
 
@@ -27,9 +28,9 @@ public class InfDupStickPartMakerScreenHandler extends ScreenHandler {
         this.context = context;
         this.player = playerInventory.player;
 
-        this.addSlot(new FilteredInputSlot(inventory, 0, 17, 43, DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_ONE));
-        this.addSlot(new FilteredInputSlot(inventory, 1, 53, 43, DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_TWO));
-        this.addSlot(new FilteredInputSlot(inventory, 2, 89, 43, Items.STICKY_PISTON));
+        this.addSlot(new FilteredInputSlot(inventory, 0, 17, 43, LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getItem()));
+        this.addSlot(new FilteredInputSlot(inventory, 1, 53, 43, LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getItem()));
+        this.addSlot(new FilteredInputSlot(inventory, 2, 89, 43, LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getItem()));
 
         this.addSlot(new DuplicatorResultSlot(inventory, 3, 143, 43));
 
@@ -54,20 +55,20 @@ public class InfDupStickPartMakerScreenHandler extends ScreenHandler {
             if (!slot0.isEmpty() && !slot1.isEmpty() && !slot2.isEmpty()) {
                 if (slot3.isEmpty() || (slot3.isOf(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK_PART) && slot3.getCount() < slot3.getMaxCount())) {
                     if (
-                            (slot0.isOf(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_ONE) && slot0.getCount() >= 10) &&
-                                    (slot1.isOf(DuplicatorItemRegistry.UNDUPLICATABLE_ITEM_TWO) && slot1.getCount() >= 4) &&
-                                    (slot2.isOf(Items.STICKY_PISTON) && slot2.getCount() >= 5)
+                            (slot0.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getItem()) && slot0.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getCount()) &&
+                                    (slot1.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getItem()) && slot1.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getCount()) &&
+                                    (slot2.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getItem()) && slot2.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getCount())
                     ) {
                         this.context.run((world, blockPos) -> {
-                            slot0.decrement(10);
+                            slot0.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getCount());
                             if (slot0.isEmpty()) {
                                 this.inventory.setStack(0, ItemStack.EMPTY);
                             }
-                            slot1.decrement(4);
+                            slot1.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getCount());
                             if (slot1.isEmpty()) {
                                 this.inventory.setStack(1, ItemStack.EMPTY);
                             }
-                            slot2.decrement(5);
+                            slot2.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getCount());
                             if (slot2.isEmpty()) {
                                 this.inventory.setStack(2, ItemStack.EMPTY);
                             }
