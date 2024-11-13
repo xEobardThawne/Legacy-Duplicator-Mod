@@ -24,7 +24,6 @@ public class BasicDuplicatorBlock extends Block {
         BlockState blockBelow = world.getBlockState(pos.down());
         BlockState blockAbove = world.getBlockState(pos.up());
         ItemStack heldItem = player.getMainHandStack();
-
         if (
                 player.getAbilities().allowModifyWorld &&
                         blockBelow.isAir() &&
@@ -40,10 +39,13 @@ public class BasicDuplicatorBlock extends Block {
                     return ActionResult.PASS;
                 }
             }
-            if (!heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(LegacyDuplicatorMod.MOD_ID, "infinite_duplicator_fuel")))) {
-                player.getMainHandStack().decrement(1);
+            if (!world.isClient()) {
+                LegacyDuplicatorMod.LOGGER.info("Server");
+                if (!heldItem.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(LegacyDuplicatorMod.MOD_ID, "infinite_duplicator_fuel")))) {
+                    player.getMainHandStack().decrement(1);
+                }
+                world.setBlockState(pos.down(), blockAbove);
             }
-            world.setBlockState(pos.down(), blockAbove);
 
             return ActionResult.SUCCESS;
         }
