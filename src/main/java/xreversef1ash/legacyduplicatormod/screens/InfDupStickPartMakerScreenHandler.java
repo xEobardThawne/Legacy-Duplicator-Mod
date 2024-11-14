@@ -54,39 +54,37 @@ public class InfDupStickPartMakerScreenHandler extends ScreenHandler {
             ItemStack slot3 = this.inventory.getStack(3);
             if (!slot0.isEmpty() && !slot1.isEmpty() && !slot2.isEmpty()) {
                 if (slot3.isEmpty() || (slot3.isOf(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK_PART) && slot3.getCount() < slot3.getMaxCount())) {
-                    if (
-                            (slot0.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getItem()) && slot0.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getCount()) &&
-                                    (slot1.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getItem()) && slot1.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getCount()) &&
-                                    (slot2.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getItem()) && slot2.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getCount())
-                    ) {
-                        this.context.run((world, blockPos) -> {
-                            slot0.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getCount());
-                            if (slot0.isEmpty()) {
-                                this.inventory.setStack(0, ItemStack.EMPTY);
-                            }
-                            slot1.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getCount());
-                            if (slot1.isEmpty()) {
-                                this.inventory.setStack(1, ItemStack.EMPTY);
-                            }
-                            slot2.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getCount());
-                            if (slot2.isEmpty()) {
-                                this.inventory.setStack(2, ItemStack.EMPTY);
-                            }
+                     this.context.run((world, blockPos) -> {
+                         if (
+                                 (slot0.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getItem()) && slot0.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getCount()) &&
+                                 (slot1.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getItem()) && slot1.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getCount()) &&
+                                 (slot2.isOf(LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getItem()) && slot2.getCount() >= LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getCount())
+                         ) {
+                             slot0.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(0).getCount());
+                             if (slot0.isEmpty()) {
+                                 this.inventory.setStack(0, ItemStack.EMPTY);
+                             }
+                             slot1.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(1).getCount());
+                             if (slot1.isEmpty()) {
+                                 this.inventory.setStack(1, ItemStack.EMPTY);
+                             }
+                             slot2.decrement(LegacyDuplicatorMod.infiniRecipeData.getSlotData(2).getCount());
+                             if (slot2.isEmpty()) {
+                                 this.inventory.setStack(2, ItemStack.EMPTY);
+                             }
 
-                            if (slot3.isEmpty()) {
-                                this.inventory.setStack(3, new ItemStack(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK_PART, 1));
-                            } else {
-                                slot3.increment(1);
-                            }
+                             if (slot3.isEmpty()) {
+                                 this.inventory.setStack(3, new ItemStack(DuplicatorItemRegistry.INFINIDUPLICATOR_STICK_PART, 1));
+                             } else {
+                                 slot3.increment(1);
+                             }
 
-                            this.inventory.markDirty();
-                            this.sendContentUpdates();
-                            world.playSound(null, blockPos, SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, SoundCategory.BLOCKS, 2.0F, 1.0F);
-                        });
-                        return true;
-                    } else {
-                        return false;
-                    }
+                             this.inventory.markDirty();
+                             this.sendContentUpdates();
+                             world.playSound(null, blockPos, SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, SoundCategory.BLOCKS, 2.0F, 1.0F);
+                         }
+                     });
+                     return true;
                 } else {
                     return false;
                 }
